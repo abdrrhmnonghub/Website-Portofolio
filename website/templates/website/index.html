@@ -1,0 +1,281 @@
+{% load static %}
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio | Abdurrahman</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-brand">AbdurrahMAN</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Beranda</a></li>
+        <li><a href="#about">Keahlian & Hobi</a></li>
+        <li><a href="#projects">Proyek</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <section id="hero" class="section hero-section">
+      <div class="hero-content">
+        <div class="hero-text hidden">
+          <h1><span id="typewriter"></span><span class="cursor">|</span></h1>
+          <p>
+            Selamat datang di ruang digital saya. Sebagai mahasiswa S1 Teknik
+            Telekomunikasi, saya antusias memadukan logika pemrograman,
+            infrastruktur jaringan, dan inovasi teknologi.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">Jelajahi Proyek Saya</a>
+            <div class="social-icons">
+              <a
+                href="https://github.com/abdrrhmnonghub"
+                target="_blank"
+                title="GitHub"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/abdurrahman-abdurrahman-21b65a38b/"
+                target="_blank"
+                title="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/4bdurrhmn_"
+                target="_blank"
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://hackmd.io/@XaqP7gFcSHW0fWHmGkDXEQ/SyKeOXjkze"
+                target="_blank"
+                title="HackMD"
+                ><i class="fa-solid fa-folder"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image hidden">
+          <img src="static/photo/avatar.jpeg" alt="Foto Profil Abdurrahman" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title hidden">Keahlian & Hobi</h2>
+      <div class="about-container">
+        <div class="about-section hidden">
+          <h3 class="about-header">Keahlian Teknis</h3>
+          <div class="slider-wrapper">
+            <div class="slider-track">
+              <div class="slide-item"><i class="fab fa-python"></i> Python</div>
+              <div class="slide-item"><i class="fab fa-docker"></i> Docker</div>
+              <div class="slide-item">
+                <i class="fas fa-network-wired"></i> Cisco
+              </div>
+              <div class="slide-item">
+                <i class="fas fa-server"></i> Networking
+              </div>
+              <div class="slide-item"><i class="fab fa-linux"></i> Linux</div>
+
+              <div class="slide-item"><i class="fab fa-python"></i> Python</div>
+              <div class="slide-item"><i class="fab fa-docker"></i> Docker</div>
+              <div class="slide-item">
+                <i class="fas fa-network-wired"></i> Cisco
+              </div>
+              <div class="slide-item">
+                <i class="fas fa-server"></i> Networking
+              </div>
+              <div class="slide-item"><i class="fab fa-linux"></i> Linux</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-section hidden">
+          <h3 class="about-header">Hobi & Minat</h3>
+          <div class="hobbies-grid">
+            <div class="hobby-card">
+              <i class="fas fa-book-reader"></i>
+              <h3>Membaca</h3>
+              <p class="hobby-desc">
+                Mengeksplorasi wawasan, ide, dan perspektif baru melalui
+                literatur yang inspiratif.
+              </p>
+            </div>
+            <div class="hobby-card">
+              <i class="fas fa-microphone-alt"></i>
+              <h3>Public Speaking</h3>
+              <p class="hobby-desc">
+                Menyampaikan gagasan secara efektif dan membangun diskusi yang
+                konstruktif.
+              </p>
+            </div>
+            <div class="hobby-card">
+              <i class="fas fa-microchip"></i>
+              <h3>Eksplorasi Teknologi</h3>
+              <p class="hobby-desc">
+                Membongkar, menguji coba, dan merakit ulang sistem untuk
+                memahami cara kerjanya secara mendalam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section hidden">
+      <h2 class="section-title">Proyek Pilihan</h2>
+
+      <div class="projects-slider-wrapper">
+        <div class="projects-track">
+          <div class="projects-set">
+            <div class="card">
+              <h3>Web Perpustakaan S3</h3>
+              <p>
+                Mengembangkan aplikasi web perpustakaan menggunakan
+                kontainerisasi Docker yang terintegrasi secara langsung dengan
+                layanan penyimpanan cloud AWS S3.
+              </p>
+              <div class="project-tags">
+                <span>Docker</span>
+                <span>AWS S3</span>
+                <span>Web Dev</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>ML untuk Dataset BNPL</h3>
+              <p>
+                Membangun model Machine Learning yang dirancang untuk
+                menganalisis serta memprediksi pola dataset pada layanan
+                keuangan Buy Now Pay Later (BNPL).
+              </p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>Machine Learning</span>
+                <span>Data Science</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Simulasi SDN</h3>
+              <p>
+                Merancang topologi Software-Defined Networking (SDN) fungsional
+                dengan memanfaatkan kapabilitas simulator Mininet dan Ryu
+                Controller.
+              </p>
+              <div class="project-tags">
+                <span>SDN</span>
+                <span>Mininet</span>
+                <span>Ryu Controller</span>
+                <span>Networking</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects-set">
+            <div class="card">
+              <h3>Web Perpustakaan S3</h3>
+              <p>
+                Mengembangkan aplikasi web perpustakaan menggunakan
+                kontainerisasi Docker yang terintegrasi secara langsung dengan
+                layanan penyimpanan cloud AWS S3.
+              </p>
+              <div class="project-tags">
+                <span>Docker</span>
+                <span>AWS S3</span>
+                <span>Web Dev</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>ML untuk Dataset BNPL</h3>
+              <p>
+                Membangun model Machine Learning yang dirancang untuk
+                menganalisis serta memprediksi pola dataset pada layanan
+                keuangan Buy Now Pay Later (BNPL).
+              </p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>Machine Learning</span>
+                <span>Data Science</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Simulasi SDN</h3>
+              <p>
+                Merancang topologi Software-Defined Networking (SDN) fungsional
+                dengan memanfaatkan kapabilitas simulator Mininet dan Ryu
+                Controller.
+              </p>
+              <div class="project-tags">
+                <span>SDN</span>
+                <span>Mininet</span>
+                <span>Ryu Controller</span>
+                <span>Networking</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section hidden">
+      <h2 class="section-title">Mari Terhubung</h2>
+      <div class="contact-container">
+        <form
+          action="https://formspree.io/f/mpqnpaoa"
+          method="POST"
+          class="contact-form"
+        >
+          <input
+            type="text"
+            name="nama"
+            placeholder="Nama Lengkap Anda"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Alamat Email Anda"
+            required
+          />
+          <textarea
+            name="pesan"
+            rows="5"
+            placeholder="Apa yang ingin Anda diskusikan?"
+            required
+          ></textarea>
+          <button type="submit">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2026 Abdurrahman. All Rights Reserved.</p>
+      <p>
+        Built with <span class="highlight">Django</span> &
+        <span class="highlight">Docker</span> for Internship Assignment.
+      </p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>
