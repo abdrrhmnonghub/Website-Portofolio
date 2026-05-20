@@ -557,31 +557,113 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+/* Sembunyikan hamburger di Desktop */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  cursor: pointer;
+}
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 15px 20px;
-    gap: 15px;
+/* =========================================
+   MEDIA QUERY UNTUK HP & TABLET (Max 768px)
+   ========================================= */
+@media screen and (max-width: 768px) {
+  /* Munculkan hamburger */
+  .hamburger {
+    display: block;
   }
+
+  /* Ubah navbar jadi menu tersembunyi (slide dari kanan) */
+  .nav-links {
+    position: absolute;
+    top: 70px; /* Jarak dari atas navbar */
+    right: -100%; /* Sembunyikan di luar layar */
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    transition: 0.3s ease-in-out;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-brand {
+    font-size: 1.1rem; /* Mengecilkan ukuran font agar proporsional */
+    letter-spacing: 0; /* Mengurangi jarak antar huruf */
+    white-space: nowrap; /* Memaksa teks tidak turun ke baris baru */
+    /* Opsional: Lu juga bisa ganti teks 'abdurrahMAN' di index.html jadi 'Samuel' biar lebih ringkas dan pas di HP */
+  }
+  /* Class ini akan dipicu oleh JavaScript */
+  .nav-links.active {
+    right: 0;
+  }
+
+  /* Bikin elemen web lain mengecil & menyesuaikan layar HP */
   .hero-content {
     flex-direction: column-reverse;
     text-align: center;
   }
-  .hero-text {
-    text-align: center;
-  }
-  .hero-actions {
-    justify-content: center;
-  }
-  .hero-image {
-    justify-content: center;
-  }
+
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
+
+  .hero-image img {
+    max-width: 250px;
+  }
+
   .section {
-    padding: 140px 5% 50px 5%;
+    min-height: auto; /* Membatalkan tinggi 100vh agar menyesuaikan isi */
+    padding: 80px 5% 40px 5%; /* Merapatkan jarak atas dan bawah */
+  }
+
+  .section-title {
+    margin-bottom: 30px; /* Merapatkan jarak antara judul dan konten di bawahnya */
+  }
+
+  /* Kartu proyek mengecil ke tengah */
+  .card {
+    width: 280px; /* Ukuran ideal buat HP */
+    padding: 20px;
+    flex-shrink: 0;
+    border-left-width: 4px; /* Tipisin border dikit */
+  }
+
+  /* 2. Pastikan track slider gak kepotong */
+  .projects-slider-wrapper {
+    padding: 20px 0;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  /* 3. Atur ulang animasi khusus mobile */
+  .projects-track {
+    gap: 20px; /* Kecilin jarak antar set */
+    animation: slideProjectsMobile 12s linear infinite; /* Lebih cepet karena jalurnya pendek */
+  }
+
+  .projects-set {
+    gap: 20px; /* Kecilin jarak antar kartu di dalam set */
+  }
+
+  /* 4. Sesuaikan font kartu biar gak berantakan */
+  .card h3 {
+    font-size: 1.2rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* 5. Keyframe khusus mobile biar pas dengan gap 20px */
+@keyframes slideProjectsMobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Geser 50% (satu set) + 10px (setengah dari gap 20px) */
+    transform: translateX(calc(-50% - 10px));
   }
 }
