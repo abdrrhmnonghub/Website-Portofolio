@@ -48,3 +48,61 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
     navLinks.classList.remove("active");
   });
 });
+// =========================================
+// 4. LOGIC SLIDER MANUAL & OTOMATIS (2 DETIK)
+// =========================================
+const eduSlider = document.getElementById("eduSlider");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+if (eduSlider && prevBtn && nextBtn) {
+  let autoSlideInterval;
+
+  // Fungsi menggeser ke kanan
+  const slideNext = () => {
+    // Cek apakah slider sudah mentok di ujung kanan
+    if (
+      eduSlider.scrollLeft + eduSlider.clientWidth >=
+      eduSlider.scrollWidth - 10
+    ) {
+      eduSlider.scrollTo({ left: 0, behavior: "smooth" }); // Balik ke awal
+    } else {
+      eduSlider.scrollBy({ left: eduSlider.clientWidth, behavior: "smooth" });
+    }
+  };
+
+  // Fungsi menggeser ke kiri
+  const slidePrev = () => {
+    // Cek apakah slider sudah di paling kiri
+    if (eduSlider.scrollLeft <= 10) {
+      eduSlider.scrollTo({ left: eduSlider.scrollWidth, behavior: "smooth" }); // Lempar ke akhir
+    } else {
+      eduSlider.scrollBy({ left: -eduSlider.clientWidth, behavior: "smooth" });
+    }
+  };
+
+  // Event listener klik manual (menghentikan timer agar tidak double-slide)
+  nextBtn.addEventListener("click", () => {
+    slideNext();
+    resetInterval();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    slidePrev();
+    resetInterval();
+  });
+
+  // Fungsi menyalakan auto slider 2 detik (2000 milidetik)
+  const startInterval = () => {
+    autoSlideInterval = setInterval(slideNext, 6000);
+  };
+
+  // Fungsi reset timer jika tombol manual ditekan
+  const resetInterval = () => {
+    clearInterval(autoSlideInterval);
+    startInterval();
+  };
+
+  // Nyalakan auto slider pertama kali web dimuat
+  startInterval();
+}
